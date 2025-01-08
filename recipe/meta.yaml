@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pydantic_mongo-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pydantic_mongo-{{ version }}.tar.gz
   sha256: d1b05d6bf28e0eeca66809a99c362b958bf6fc6af59350d44d9a948e5fc30e3b
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=42
     - wheel
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - pymongo >=4.3,<5.0
     - pydantic >=2.0.2,<3.0.0
 
@@ -37,6 +37,7 @@ test:
     - pip
     - pytest
     - mongomock
+    - python {{ python_min }}
 
 about:
   home: https://github.com/jefersondaniel/pydantic-mongo
