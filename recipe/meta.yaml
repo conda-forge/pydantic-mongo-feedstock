@@ -1,5 +1,5 @@
 {% set name = "pydantic-mongo" %}
-{% set version = "2.3.0" %}
+{% set version = "2.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pydantic_mongo-{{ version }}.tar.gz
-  sha256: d1b05d6bf28e0eeca66809a99c362b958bf6fc6af59350d44d9a948e5fc30e3b
+  sha256: d7c93ddd6c0ed93fba25b5f05c974e5b3dde74796c04d693cc515755773a6791
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
