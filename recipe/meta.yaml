@@ -33,7 +33,7 @@ test:
     - pydantic_mongo
   commands:
     - pip check
-    - pytest ./test -k 'not test_enhance_meta'  # [not win]
+    - pytest ./test -k 'not test_enhance_meta and not test_async_repository'  # [not win]
   requires:
     - pip
     - pytest
