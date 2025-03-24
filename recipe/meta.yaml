@@ -37,8 +37,8 @@ test:
   requires:
     - pip
     - pytest
-    - pymongo >=4.11
-    - mongomock >=4.3
+    - pymongo <4.11  # https://github.com/mongomock/mongomock/issues/912$0
+    - mongomock
     - python {{ python_min }}
 
 about:
